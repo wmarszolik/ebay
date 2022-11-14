@@ -1,4 +1,14 @@
-*{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -152,3 +162,80 @@ nav {
         flex-shrink: 3;
     }
 }
+    </style> 
+</head>
+<body>
+    <header>
+    <nav>
+        <ul class='nav-bar'>
+            <li class='logo'><a href='#'><img src='https://raw.githubusercontent.com/wmarszolik/wmarszolik.github.io/main/logo8.png'/></a></li>
+            <input type='checkbox' id='check' />
+            <span class="menu">
+                <li><a href="https://www.ebay.de/usr/marmarkt24">home</a></li>
+                <li><a href="https://feedback.ebay.de/ws/eBayISAPI.dll?ViewFeedback2&amp;userid=marmarkt24">bewertungen</a></li>
+                <li><a href="https://my.ebay.de/ws/eBayISAPI.dll?AcceptSavedSeller&amp;sellerid=marmarkt24">speichern</a></li>
+                <li><a href="https://contact.ebay.de/ws/eBayISAPI.dll?ReturnUserEmail&amp;requested=marmarkt24">kontakt</a></li>
+                <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+            </span>
+            <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+        </ul>
+    </nav>
+    </header>
+    <section class="content">
+        <div class="card">
+            <div class="imagewrapper">
+                <img src="https://picsum.photos/1200/800">
+            </div>
+            <ul class="text"> 
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+                <li>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+                <li>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
+                <li>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</li> 
+            </ul>
+        </div>
+        <div class="card">
+            <div class="imagewrapper">
+                <img src="https://picsum.photos/3000/2000">
+            </div>
+            <ul class="text"> 
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+                <li>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+                <li>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
+                <li>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</li> 
+            </ul>
+        </div>
+        <div class="card">
+            <div class="imagewrapper">
+                <img src="https://picsum.photos/768/500">
+            </div>
+            <ul class="text"> 
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+                <li>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+                <li>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
+                <li>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</li> 
+            </ul>
+        </div>
+        <div class="card">
+            <div class="imagewrapper">
+                <img src="https://picsum.photos/500/500">
+            </div>
+            <ul class="text"> 
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+                <li>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+                <li>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
+                <li>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</li> 
+            </ul>
+        </div>
+        <div class="card">
+            <div class="imagewrapper">
+                <img src="https://picsum.photos/1500/1200">
+            </div>
+            <ul class="text"> 
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
+                <li>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+                <li>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</li>
+                <li>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</li> 
+            </ul>
+        </div>
+        
+</body>
