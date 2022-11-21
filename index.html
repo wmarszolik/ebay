@@ -8,272 +8,383 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?display=swap&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700" rel="stylesheet">
-    <style type="text/css">
+    <style>
         *{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: "Poppins", sans-serif;
-            --color1: #FFF ;
-            --color2: #8399B3 ;
-            background-color: #D6E4E5 ;
-        }
-        nav {
-            max-width: 1368px;
-            margin:3px 0px 0px 0px;
-            padding: 0px 10px 0px 10px;
-            background-color: #D6E4E5 ;
-        }
-        .nav-bar {
-            border-radius: 20px;
-            padding: 10px 30px;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            list-style: none;
-            position: relative;
-            background-color: var(--color2);
-        }
-        .logo img {height: 90px;}
-        .menu {
-            display: flex;
-            flex-wrap: nowrap;;
-            font-family: "Volkhov", sans-serif;
-        }
-        .menu li {padding-left: 25px;}
-        .menu li a {
-            display: inline-block;
-            text-decoration: none;
-            color: var(--color1);
-            text-align: center;
-            transition: 0.15s ease-in-out;
-            position: relative;
-            text-transform: uppercase;
-        }
-        .menu li a::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--color1);
-            transition: 0.15s ease-in-out;
-        }
-        .menu li a:hover:after {width: 100%;}
-        .open-menu , .close-menu {
-            position: absolute;
-            color: var(--color1);
-            cursor: pointer;
-            font-size: 1.5rem;
-            display: none;
-        }
-        .open-menu {
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-        }
-        .close-menu {
-            top: 30px;
-            right: 20px;
-        }
-        #check {display: none;}
-        
-        .content {
-            max-width: 1368px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            background-color: #D6E4E5;
-        }
-        .card {
-            display: flex;
-            gap: 10px;
-            width: 100vw;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-            background-color: #FFE3E1;
-            border-radius: 20px;
-            padding: 10px;
-            margin: .6rem .6rem .3rem .6rem;
-        }
-        .imagewrapper {
-            display: flex;
-            max-width: 100vw; 
-        }
-        .imagewrapper img {
-            max-width: 100%;
-            border-radius: 15px;
-            border: 1px solid #d5bcbc;
-        }
-        .card ul {
-            width: 100%;
-            background-color: #efefef;
-            border-radius: 15px;
-            border: 1px solid #d5bcbc;
-        }
-        .card ul li {
-            font-size: 1.2rem;
-            margin-left: 20px;
-            padding: 10px 8px 8px 0px;
-        }
-        .explanation {
-            width: 100%;
-            flex-direction: row;
-        }
-        .hey {
-            background-color: #ff6900;
-            padding: 1rem;
-            color: white;
-            font-style: italic;
-            font-weight: 700;
-            flex-grow: 1;
-            /* text-align: center; */
-            border-radius: 15px;
-            /* width: 80px; */
-            height: 100%;
-        }
-        .expl-text {
-            background-color: #fcb900;
-            padding: 1rem;
-            flex-grow: 5;
-            font-weight: 700;
-            font-style: italic;
-            border-radius: 15px;
-        }
-        footer {
-            max-width: 1368px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 10px;
-        }
-        .container {
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            width: 100%;
-            gap: 10px;
-            background-image: url(https://raw.githubusercontent.com/wmarszolik/wmarszolik.github.io/main/hand2.png),
-            url(https://raw.githubusercontent.com/wmarszolik/wmarszolik.github.io/main/hand2.png);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: #40362e;
-            /* background-color: #1d1b2f; */
-            background-blend-mode: multiply;
-            overflow: hidden;
-            color: white;
-            padding: 10px 0px 0px 0px;
-            border-radius: 15px;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-        }
-        .container > * {
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            /* border: 1px solid rgb(235, 214, 25); */
-            list-style-type: none;
-        }
-        .zahlungen li {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            padding: 3px;
-        }
-        .zahlungen img {
-            max-width: 60px;
-        }
-        
-        .links li {
-            transition: ease-in-out;
-            transition-duration: 200ms;
-        }
-        .links li a {
-            text-decoration: none;
-            text-transform: capitalize;
-            color: white;
-            
-        }
-        .links li:hover {
-            transform: scale(1.1);
-        }
-        .icon1::before, .icon2::before, .icon3::before, .icon4::before, .icon5::before{
-            display: inline-block;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            font: var(--fa-font-solid);
-            margin-right: 15px;
-        }   
-        .icon1::before {
-            content: "\f290";
-        }
-        .icon2::before {
-            content: "\f007";
-        }
-        .icon3::before {
-            content: "\f005";
-        }
-        .icon4::before {
-            content: "\f0c7";
-        }
-        .icon5::before {
-            content: "\f0e0";
-        }            
-        .copyrights {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            grid-row: 2 / span 1;
-            grid-column: 1 / -1;
-            border-radius: 15px;
-            background-color: #010625;
-            padding: 12px 0px;
-            font-size: 0.9rem;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-        }
-        @media(max-width: 767px){
-            .logo img {height: 80px;}
-            .menu {
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 80%;
-                height: 100vh;
-                position: fixed;
-                top: 0;
-                right: -100%;
-                z-index: 100;
-                background-color: var(--color2);
-                transition: all 0.2s ease-in-out;
-            }
-            .menu li {margin-top: 40px; padding: 0px;}
-            .menu li a {padding: 10px;}
-            .open-menu , .close-menu {display: block;}
-            #check:checked ~ .menu {right: 0;}
-        }
-        @media(min-width: 768px) {
-            .card {
-                flex-direction: row;
-            }
-            .card ul {
-                height: 100%;
-                width: auto;
-                flex-shrink: 2;
-            }
-            .imagewrapper {
-                flex-shrink: 3;
-            }
-        }
-    </style>    
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    --color1: #FFF ;
+    /* --color2: #8399B3 ; */
+    --color2: #545745 ;
+    /* background-color: #fbf6f2 ; */
+    background-color: #D6E4E5 ;
+}
+nav {
+    max-width: 1368px;
+    margin:3px 0px 0px 0px;
+    padding: 0px 8px 0px 8px;
+    background-color: #D6E4E5 ;
+}
+.nav-bar {
+    border-radius: 20px;
+    outline: 1px solid #768044;
+    outline-offset: -9px;
+    padding: 16px 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--color2);
+}
+.logo img {height: 80px;}
+.menu {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    font-family: "Volkhov", sans-serif;
+}
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
+}
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
+}
+.menu li a:hover:after {width: 100%;}
+.open-menu , .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu {
+    top: 30px;
+    right: 20px;
+}
+#check {display: none;}
+
+.content {
+    max-width: 1368px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #D6E4E5;
+}
+.card {
+    display: flex;
+    gap: 8px;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    /* background-color: #FFE3E1; */
+    background-color: #e6dbd2;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 4px 8px 4px 8px;
+}
+.intro{
+    background-color: #e1b2ed;
+}
+.intro > *{
+background-color: #e6cfec;
+flex-grow: 1;
+text-align: center;
+border-radius: 10px;
+padding: 20px;
+}
+.imagewrapper {
+    display: flex;
+    max-width: 100vw; 
+}
+.imagewrapper img {
+    max-width: 100%;
+    border-radius: 15px;
+    border: 1px solid #d5bcbc;
+}
+.card ul {
+    width: 100%;
+    background-color: #efefef;
+    border-radius: 15px;
+    border: 1px solid #d5bcbc;
+}
+.card ul li {
+    font-size: 1.2rem;
+    margin-left: 20px;
+    padding: 10px 8px 8px 4px;
+}
+/* .text li {
+    list-style-position: inside;
+    text-align: center;
+} */
+.text li::marker {
+    padding: 5px;
+    margin: 5px;
+    content:"\1F5F8";
+    color: green;
+}
+.explanation {
+    width: 100%;
+    flex-direction: row;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.hey {
+    background-color: #ff6900;
+    padding: 1rem;
+    color: white;
+    font-style: italic;
+    font-weight: 700;
+    flex-grow: 1;
+    text-align: center;
+    border-radius: 15px;
+    /* width: 80px; */
+    height: 100%;
+}
+.expl-text {
+    background-color: #fcb900;
+    padding: 1rem;
+    flex-grow: 5;
+    font-weight: 700;
+    font-style: italic;
+    border-radius: 15px;
+}
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0;
+    max-width: 100%;
+    background-color: #e6dbd2;
+    padding: 8px;
+    border-radius: 20px;
+    /* outline: 1px solid #d5bcbc; */
+    /* outline-offset: -8px; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.tabs__label {
+    padding: 14px 25px;
+    flex-grow: 1;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 8px;
+    border: 2px solid #d5bcbc;
+}
+.tabs__radio {
+    display: none;
+}
+.tabs__content {
+    order: 1;
+    width: 100%;
+    padding: 10px;
+    /* border: 1px solid #d5bcbc; */
+    border-radius: 0 0 15px 15px;
+    background-color: #efefef;
+
+    display: none;
+}
+
+.tabs__radio:checked + .tabs__label {
+    font-weight:bold;
+    padding: 19px;
+    margin: 0;
+    background-color: #efefef;
+    border: 1px solid #efefef;
+}
+.tabs__radio:checked + .tabs__label +.tabs__content {
+    display:initial;
+    font-size: 1.2rem;
+
+}
+footer {
+    max-width: 1368px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px;
+}
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    gap: 8px;
+    /* border: 1px solid black; */
+    background-color: #545745;
+    background-blend-mode: multiply;
+    overflow: hidden;
+    color: white;
+    padding: 8px;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.container > * {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: 1px solid #768044;
+    border-radius: 15px;
+
+    list-style-type: none;
+}
+.zahlungen {
+    /* background-color: #686e63; */
+    padding: 3px;
+}
+.zahlungen li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 2px;
+}
+.zahlungen img {
+    max-width: 60px;
+}
+.handshake {
+    grid-column: 2 / 4;
+    background-image: url("https://raw.githubusercontent.com/wmarszolik/wmarszolik.github.io/main/hand6.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.links li {
+    transition: ease-in-out;
+    transition-duration: 200ms;
+}
+.links li a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: white;
+    
+}
+.links li:hover {
+    transform: scale(1.1);
+}
+.icon1::before, .icon2::before, .icon3::before, .icon4::before, .icon5::before{
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    margin-right: 15px;
+}   
+.icon1::before {
+    content: "\f290";
+}
+.icon2::before {
+    content: "\f007";
+}
+.icon3::before {
+    content: "\f005";
+}
+.icon4::before {
+    content: "\f0c7";
+}
+.icon5::before {
+    content: "\f0e0";
+}            
+.copyrights {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-row: 2 / span 1;
+    grid-column: 1 / -1;
+    background-color: #010f0f;
+    padding: 15px 0px;
+    font-size: 0.8rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+@media(max-width: 767px){
+    .logo img {height: 80px;}
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {margin-top: 40px; padding: 0px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+    .container {
+        grid-template: 1fr 1fr;
+        grid-auto-flow: row;
+    }
+    .tabs {
+        flex-direction: row;
+    }
+    .zahlungen {
+        grid-column: 1 / span 2;
+        grid-row: 1 / 2;
+    }
+    .handshake {
+        height: 20vh;
+        grid-column: 1 / -1;
+        grid-row: 2 / span 2;
+        background-image: url("https://raw.githubusercontent.com/wmarszolik/wmarszolik.github.io/main/hand6.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+
+    }
+
+    .links {
+        grid-column: 3 / span 2;
+        grid-row: 1 / 2;
+    }
+    .copyrights {
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
+    }
+}
+@media(min-width: 768px) {
+    .card {
+        flex-direction: row;
+    }
+    .card ul {
+        height: 100%;
+        width: auto;
+        flex-shrink: 2;
+    }
+    .imagewrapper {
+        flex-shrink: 3;
+    }
+}
+    </style>
 </head>
 <body>
     <header>
@@ -282,10 +393,10 @@
             <li class='logo'><a href='#'><img src='https://raw.githubusercontent.com/wmarszolik/wmarszolik.github.io/main/logo8.png'/></a></li>
             <input type='checkbox' id='check' />
             <span class="menu">
-                <li><a href="https://www.ebay.de/usr/marmarkt24">verkäufersprofil</a></li>
-                <li><a href="https://feedback.ebay.de/ws/eBayISAPI.dll?ViewFeedback2&amp;userid=marmarkt24">bewertungen</a></li>
-                <li><a href="https://my.ebay.de/ws/eBayISAPI.dll?AcceptSavedSeller&amp;sellerid=marmarkt24">shop speichern</a></li>
-                <li><a href="https://contact.ebay.de/ws/eBayISAPI.dll?ReturnUserEmail&amp;requested=marmarkt24">kontakt</a></li>
+                <li><a target="_blank" href="https://www.ebay.de/usr/marmarkt24">profil</a></li>
+                <li><a target="_blank" href="https://feedback.ebay.de/ws/eBayISAPI.dll?ViewFeedback2&amp;userid=marmarkt24">bewertungen</a></li>
+                <li><a target="_blank" href="https://my.ebay.de/ws/eBayISAPI.dll?AcceptSavedSeller&amp;sellerid=marmarkt24">shop speichern</a></li>
+                <li><a target="_blank" href="https://contact.ebay.de/ws/eBayISAPI.dll?ReturnUserEmail&amp;requested=marmarkt24">kontakt</a></li>
                 <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
             </span>
             <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
@@ -293,6 +404,9 @@
     </nav>
     </header>
     <section class="content">
+        <div class="intro card">
+            <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis, esse!</h1>
+        </div>
         <div class="card">
             <div class="imagewrapper">
                 <img src="https://picsum.photos/1200/800">
@@ -328,7 +442,7 @@
         </div>
         <div class="card">
             <div class="imagewrapper">
-                <img src="https://picsum.photos/500/500">
+                <img src="https://picsum.photos/700/500">
             </div>
             <ul class="text"> 
                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</li>
@@ -349,10 +463,31 @@
             </ul>
         </div>
         <div class="card explanation">
-                <p class="hey">Hey!</p>
+                <p class="hey">Wichtig!</p>
                 <p class="expl-text">Lorem ipsum dolor sit amet, consect</p>
         </div>
-        
+        <div class="card tabs">
+            <input type="radio" class="tabs__radio" name="tabs_menu" id="tab1" checked>
+            <label for="tab1" class="tabs__label">Lieferung</label>
+            <div class="tabs__content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat id odio, provident iste veniam harum quod!
+                 Quo veritatis ut reiciendis.
+                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Pariatur atque distinctio dolores itaque consequatur! Nihil voluptatibus quaerat beatae doloribus accusantium?
+            </div>
+            <input type="radio" class="tabs__radio" name="tabs_menu" id="tab2" checked>
+            <label for="tab2" class="tabs__label">Tab #2</label>
+            <div class="tabs__content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni necessitatibus eum recusandae quisquam facere numquam reiciendis nihil cum esse ab assumenda quasi accusamus sint porro quia, quis architecto quod laborum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet cum earum quidem officiis repellat explicabo doloremque officia animi tempore beatae.
+            </div>
+            <input type="radio" class="tabs__radio" name="tabs_menu" id="tab3" checked>
+            <label for="tab3" class="tabs__label">Entsorgunshinweis</label>
+            <div class="tabs__content">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia impedit ullam amet quo pariatur animi architecto! Ipsa fuga mollitia odio unde ipsum tenetur in provident a, expedita eum illo eveniet quod veritatis, explicabo inventore. Velit, ipsum! Temporibus adipisci atque assumenda fugiat ratione unde, reprehenderit, vero debitis sit consectetur eum! Provident?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos cum culpa itaque minima velit dolore suscipit necessitatibus explicabo voluptas! Numquam.
+            </div>
+        </div>
     </section>
     <footer>
         <div class="container">
@@ -363,15 +498,13 @@
                 <li><img src="https://raw.githubusercontent.com/wmarszolik/wmarszolik.github.io/main/klarna.png">Klarna</li>
                 <li><img src="https://raw.githubusercontent.com/wmarszolik/wmarszolik.github.io/main/ppal.png">PayPal</li>
             </ul> 
-            <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem ducimus in quideandae error possimus minima! Perspiciatis.</div>            
-            <div>m labore ullam soluta id commodi, ipsa, quam modi consectetur esse dignissimos impedit nobis recus</div>
+            <div class="handshake"></div>            
             <ul class="links">
-                <!-- <li class="list">Links</li> -->
-                <li class="icon1"><a href="https://www.ebay.de/usr/marmarkt24">unser shop</a></li>
-                <li class="icon2"><a href="https://www.ebay.de/usr/marmarkt24">Verkäuferprofil</a></li>
-                <li class="icon3"><a href="https://feedback.ebay.de/ws/eBayISAPI.dll?ViewFeedback2&amp;userid=marmarkt24">Bewertungen</a></li>
-                <li class="icon4"><a href="https://my.ebay.de/ws/eBayISAPI.dll?AcceptSavedSeller&amp;sellerid=marmarkt24">Shop speichern</a></li>
-                <li class="icon5"><a href="https://contact.ebay.de/ws/eBayISAPI.dll?ReturnUserEmail&amp;requested=marmarkt24">Kontakt</a></li>
+                <li class="icon1"><a target="_blank" href="https://www.ebay.de/usr/marmarkt24">unser shop</a></li>
+                <li class="icon2"><a target="_blank" href="https://www.ebay.de/usr/marmarkt24">Verkäuferprofil</a></li>
+                <li class="icon3"><a target="_blank" href="https://feedback.ebay.de/ws/eBayISAPI.dll?ViewFeedback2&amp;userid=marmarkt24">Bewertungen</a></li>
+                <li class="icon4"><a target="_blank" href="https://my.ebay.de/ws/eBayISAPI.dll?AcceptSavedSeller&amp;sellerid=marmarkt24">Shop speichern</a></li>
+                <li class="icon5"><a target="_blank" href="https://contact.ebay.de/ws/eBayISAPI.dll?ReturnUserEmail&amp;requested=marmarkt24">Kontakt</a></li>
             </ul>          
             <div class="copyrights">marmarkt24 Copyright © 2022. All rights reserved.</div>
         </div>
